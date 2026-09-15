@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>21Q — just questions, just conversation</title>
+<meta name="description" content="21Q presents one question at a time, meant to be talked through with another person.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sky" id="sky" aria-hidden="true">
+  <div class="glow glow--a"></div>
+  <div class="glow glow--b"></div>
+  <div class="glow glow--c"></div>
+</div>
+
+<main>
+
+  <!-- LANDING -->
+  <section class="screen screen--landing is-active" id="screen-landing">
+    <div class="landing-inner">
+      <p class="wordmark">21Q</p>
+      <h1 class="tagline">Just questions.<br>Just conversation.</h1>
+      <p class="sub">No answers to type. No score to keep.<br>Just the two of you, and what comes up.</p>
+      <button class="btn btn--primary" id="btn-start" type="button">Begin</button>
+    </div>
+  </section>
+
+  <!-- QUESTION -->
+  <section class="screen screen--question" id="screen-question">
+    <div class="question-inner">
+
+      <div class="qcard-wrap">
+        <div class="qcard-glow" aria-hidden="true"></div>
+        <div class="qcard" id="qcard">
+          <div class="qcard-top">
+            <span class="qcard-number" id="qcard-number"></span>
+            <span class="qcard-tag" id="qcard-tag"></span>
+          </div>
+          <p class="qcard-text" id="question-text"></p>
+        </div>
+      </div>
+
+      <div class="glass-actions">
+        <button class="glass-btn glass-btn--prev" id="btn-prev" type="button" aria-label="Previous question">
+          <span class="glass-btn__arrow" aria-hidden="true">‹</span>
+          <span class="glass-btn__label">Prev</span>
+        </button>
+        <button class="glass-btn glass-btn--skip" id="btn-skip" type="button">
+          <span class="glass-btn__label">Skip</span>
+        </button>
+        <button class="glass-btn glass-btn--next" id="btn-next" type="button" aria-label="Next question">
+          <span class="glass-btn__label">Next</span>
+          <span class="glass-btn__arrow" aria-hidden="true">›</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HISTORY BOTTOM SHEET -->
+  <div class="sheet-backdrop" id="sheet-backdrop"></div>
+  <div class="history-sheet" id="history-sheet" role="dialog" aria-modal="true" aria-label="Question history">
+    <div class="sheet-handle" id="sheet-handle" aria-hidden="true"></div>
+    <p class="sheet-title">History</p>
+    <div class="sheet-list" id="sheet-list"></div>
+  </div>
+
+  <!-- MILESTONE OVERLAY -->
+  <section class="screen screen--milestone" id="screen-milestone" aria-live="polite">
+    <div class="milestone-inner">
+      <div class="milestone-ring">
+        <span class="milestone-number" id="milestone-number"></span>
+      </div>
+      <p class="milestone-caption" id="milestone-caption"></p>
+      <button class="btn btn--text" id="btn-milestone-continue" type="button">Continue talking</button>
+    </div>
+  </section>
+
+  <!-- ENDING -->
+  <section class="screen screen--ending" id="screen-ending">
+    <div class="ending-inner">
+      <p class="wordmark wordmark--small">21Q</p>
+      <h2 class="ending-title">The conversation continues.</h2>
+      <p class="sub">You've come a long way through this chapter.<br>Sit with what you've shared — more questions are on their way.</p>
+      <button class="btn btn--ghost" id="btn-restart" type="button">Begin again from the start</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/questions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
